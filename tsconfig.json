@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"rootDir": "src",
+		"sourceMap": true,
+		"outDir": "dist",
+		"declaration": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"downlevelIteration": true,
+		"strict": true,
+		"lib": [
+			"es2018",
+			"esnext",
+			"esnext.asynciterable"
+		]
+	},
+	"exclude": ["node_modules", "test", "dist"]
+}

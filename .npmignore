@@ -1,0 +1,8 @@
+.*
+*.md
+*.yml
+dist/
+node_modules/
+src/
+test/
+

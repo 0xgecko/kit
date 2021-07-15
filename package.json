@@ -1,0 +1,58 @@
+{
+  "name": "@cryptoless/cryptoless-util",
+  "version": "0.0.1",
+  "description": "A simple set of crypto utilities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cryptoless/cryptoless-util.git"
+  },
+  "dependencies": {
+    "@types/bn.js": "^5.1.0",
+    "bn.js": "^5.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "typeforce": "^1.18.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.3",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run tsc",
+    "clean": "rm -Rf ./dist",
+    "test:watch": "jest --watch --config=jest.config.json",
+    "test:cov": "jest --config=jest.config.json --coverage --coverageDirectory=coverage",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "tsc": "tsc -p tsconfig.json",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "packages/**/*.{ts,json}": [
+      "eslint --fix"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
