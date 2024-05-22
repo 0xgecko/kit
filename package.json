@@ -1,5 +1,5 @@
 {
-  "name": "@xthamster/xthamster-util",
+  "name": "@0xgecko/kit",
   "version": "0.0.1-beta",
   "description": "A simple set of crypto utilities",
   "main": "dist/index.js",
